@@ -1,4 +1,3 @@
-from sentence_transformers import SentenceTransformer, util
 import pandas as pd
 import re
 import joblib
@@ -75,3 +74,4 @@ def get_best_response(user_input, questions, answers, question_embeddings, conte
     if best_score < threshold:
         return "Maaf, saya belum mengerti pertanyaan Anda."
     return filtered_answers[best_match_index]
+
