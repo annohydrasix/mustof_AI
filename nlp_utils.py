@@ -4,11 +4,11 @@ import re
 import joblib
 
 # Load model klasifikasi pertanyaan valid
-validity_clf = joblib.load("./data/validity_model.pkl")
-vectorizer = joblib.load("./data/vectorizer.pkl")
+validity_clf = joblib.load("./validity_model.pkl")
+vectorizer = joblib.load("./vectorizer.pkl")
 
 # Load pre-trained Sentence-BERT multilingual model
-model = ()
+model = SentenceTransformer('indobenchmark/indobert-base-p1')
 
 # Normalisasi teks (untuk preprocessing)
 def normalize_text(text):
@@ -75,3 +75,4 @@ def get_best_response(user_input, questions, answers, question_embeddings, conte
     if best_score < threshold:
         return "Maaf, saya belum mengerti pertanyaan Anda."
     return filtered_answers[best_match_index]
+
