@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-model = SentenceTransformer('indobenchmark/indobert-base-p1')
+model = ()
 
 # Normalisasi teks (untuk preprocessing)
 def normalize_text(text):
@@ -67,6 +67,7 @@ def get_best_response(user_input, questions, answers, question_embeddings, conte
     if best_score < threshold:
         return "Maaf, saya belum mengerti pertanyaan Anda."
     return filtered_answers[best_match_index]
+
 
 
 
