@@ -24,7 +24,7 @@ def is_valid_question(text):
     return prediction[0] == 1
 
 # Fungsi untuk memuat dataset dan membuat embedding pertanyaan
-def load_dataset(path='./data/faq.csv'):
+def load_dataset(path='./faq.csv'):
     df = pd.read_csv(path)
     questions = df['pertanyaan'].fillna("").tolist()
     answers = df['jawaban'].fillna("").tolist()
@@ -75,4 +75,5 @@ def get_best_response(user_input, questions, answers, question_embeddings, conte
     if best_score < threshold:
         return "Maaf, saya belum mengerti pertanyaan Anda."
     return filtered_answers[best_match_index]
+
 
